@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Skill Swap Platform</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="profile-page">
+    <header>
+        <div class="logo">
+            <h1>Skill Swap Platform</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/profile" class="nav-link active">Profile</a>
+            <a href="#" class="nav-link">Messages</a>
+            <a href="/logout"><button class="login-btn">Logout</button></a>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-header">
+            <h2>My Profile</h2>
+            <p>Manage your personal information and preferences</p>
+        </div>
+
+        <div class="profile-content">
+            <div class="profile-form-container">
+                <form id="profile-form" class="profile-form" action="/profile" method="POST"
+                    enctype="multipart/form-data">
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name"
+                                value="<%= user.fullname || '' %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="City, Country"
+                                value="<%= user.location || '' %>">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Skills</h3>
+                        <div class="form-group">
+                            <label for="skills-offered">Skills Offered</label>
+                            <div class="tag-input-container">
+                                <div class="tags-container" id="skills-offered-tags">
+                                    <% user.skillsOffered.forEach(skill=> { %>
+                                        <div class="tag">
+                                            <span>
+                                                <%= skill %>
+                                            </span>
+                                            <span class="tag-remove">×</span>
+                                            <input type="hidden" name="skillsOffered[]" value="<%= skill %>">
+                                        </div>
+                                        <% }) %>
+                                </div>
+                                <input type="text" id="skills-offered" placeholder="Type a skill and press Enter">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="skills-wanted">Skills Wanted</label>
+                            <div class="tag-input-container">
+                                <div class="tags-container" id="skills-wanted-tags">
+                                    <% user.skillsWanted.forEach(skill=> { %>
+                                        <div class="tag">
+                                            <span>
+                                                <%= skill %>
+                                            </span>
+                                            <span class="tag-remove">×</span>
+                                            <input type="hidden" name="skillsWanted[]" value="<%= skill %>">
+                                        </div>
+                                        <% }) %>
+                                </div>
+                                <input type="text" id="skills-wanted" placeholder="Type a skill and press Enter">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Availability</h3>
+                        <div class="form-group">
+                            <label>Days Available</label>
+                            <div class="days-container">
+                                <% ['Monday', 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday' , 'Sunday'
+                                    ].forEach(day=> { %>
+                                    <div class="day-checkbox">
+                                        <input type="checkbox" id="<%= day.toLowerCase() %>" name="days"
+                                            value="<%= day %>" <%=user.availability.includes(day) ? 'checked' : '' %>>
+                                        <label for="<%= day.toLowerCase() %>">
+                                            <%= day.slice(0, 3) %>
+                                        </label>
+                                    </div>
+                                    <% }) %>
+                            </div>
+                            <div class="quick-select">
+                                <button type="button" id="select-weekdays">Weekdays</button>
+                                <button type="button" id="select-weekends">Weekends</button>
+                                <button type="button" id="select-everyday">Everyday</button>
+                                <button type="button" id="clear-days">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Profile Visibility</h3>
+                        <div class="form-group radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="public" name="visibility" value="public"
+                                    <%=user.visibility==='public' ? 'checked' : '' %>>
+                                <label for="public">
+                                    <span class="radio-title">Public</span>
+                                    <span class="radio-desc">Your profile will be visible to everyone</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="private" name="visibility" value="private"
+                                    <%=user.visibility==='private' ? 'checked' : '' %>>
+                                <label for="private">
+                                    <span class="radio-title">Private</span>
+                                    <span class="radio-desc">Only visible to users you connect with</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="save-btn">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="profile-picture-container">
+                <div class="profile-picture">
+                    <img id="profile-image" src="<%= user.profilePicture || '/media/default-profile.jpg' %>"
+                        alt="Profile Picture">
+                    <div class="profile-picture-overlay">
+                        <i class="fas fa-camera"></i>
+                        <span>Change Photo</span>
+                    </div>
+                </div>
+                <div class="github-style-profile">
+                    <h1 id="display-name" class="github-name <%= user.fullname ? 'has-content' : '' %>">
+                        <%= user.fullname || 'Your Name' %>
+                    </h1>
+                    <div class="github-location <%= user.location ? 'has-content' : '' %>">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="display-location">
+                            <%= user.location || 'Your Location' %>
+                        </span>
+                    </div>
+                </div>
+                <input type="file" id="profile-picture-input" name="profilePicture" accept="image/*"
+                    style="display: none;">
+                <div class="profile-picture-actions">
+                    <button id="upload-picture" class="picture-btn">Upload New Picture</button>
+                    <button id="remove-picture" class="picture-btn secondary">Remove</button>
+                </div>
+                <div class="profile-picture-info">
+                    <p>Recommended: Square image, at least 300x300 pixels</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>Skill Swap Platform</h3>
+                <p>Odoo Hackathon</p>
+            </div>
+            <div class="footer-right">
+                <p>Developed by:</p>
+                <p>Rohit Bhardwaj, Pragya Sahu, Abhishek Upadhyay and Rahul Yadav</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/index.js"></script>
+    <script src="/profile.js"></script>
+</body>
+
+</html>

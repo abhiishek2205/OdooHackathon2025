@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Skill Swap Platform</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="login-page">
+    <header>
+        <div class="logo">
+            <h1>Skill Swap Platform</h1>
+        </div>
+        <div class="login">
+            <a href="/"><button class="login-btn">Home</button></a>
+        </div>
+    </header>
+
+    <main class="login-container">
+        <div class="login-box">
+            <h2>Sign Up</h2>
+            <% if (error) { %>
+                <div class="message error">
+                    <%= error %>
+                </div>
+                <% } %>
+                    <form class="login-form" action="/signup" method="POST">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="username" name="username" placeholder="Choose a username"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" placeholder="Create a password"
+                                    required>
+                            </div>
+                        </div>
+                        <button type="submit" class="login-submit-btn">Sign Up</button>
+                    </form>
+                    <div class="login-footer">
+                        <p>Already have an account? <a href="/login">Login</a></p>
+                    </div>
+        </div>
+    </main>
+
+    <script src="/index.js"></script>
+</body>
+
+</html>
