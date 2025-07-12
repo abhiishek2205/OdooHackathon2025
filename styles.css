@@ -18,33 +18,43 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 5%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(230, 230, 230, 0.7);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: all 0.3s ease;
 }
 
 .logo h1 {
     color: #4a6bff;
     font-size: 1.8rem;
     font-weight: 600;
+    background: linear-gradient(135deg, #4a6bff, #6a3aff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
 }
 
 .login-btn {
-    background-color: #4a6bff;
+    background: linear-gradient(135deg, #4a6bff, #6a3aff);
     color: white;
     border: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 4px;
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(74, 107, 255, 0.2);
 }
 
 .login-btn:hover {
-    background-color: #3a56d4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(74, 107, 255, 0.3);
 }
 
 /* Hero Section Styles */
@@ -292,6 +302,15 @@ header {
     
     .logo h1 {
         font-size: 1.4rem;
+        background: linear-gradient(135deg, #4a6bff, #6a3aff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .login-btn {
+        padding: 0.6rem 1.4rem;
+        font-size: 0.9rem;
     }
     
     .search-container {

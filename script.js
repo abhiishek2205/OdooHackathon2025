@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Header scroll effect
+    const header = document.querySelector('header');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.style.padding = '1rem 5%';
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            header.style.borderBottom = '1px solid rgba(230, 230, 230, 0.9)';
+        } else {
+            header.style.padding = '1.5rem 5%';
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
+            header.style.borderBottom = '1px solid rgba(230, 230, 230, 0.7)';
+        }
+    });
+    
     // Toggle dropdown on mobile
     const filterBtn = document.querySelector('.filter-btn');
     const dropdownContent = document.querySelector('.dropdown-content');
