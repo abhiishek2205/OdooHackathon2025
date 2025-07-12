@@ -23,34 +23,84 @@ function loadUserData(userId) {
     // This is just a simulation - in a real app you would fetch from a server
     const mockUsers = {
         '1': {
-            name: 'Sarah Johnson',
-            location: 'New York, USA',
-            skillsOffered: ['JavaScript', 'React', 'UI Design'],
-            skillsWanted: ['Python', 'Data Analysis'],
+            name: 'Aarav Sharma',
+            location: 'Mumbai, India',
+            skillsOffered: ['React', 'JavaScript', 'Node.js', 'HTML', 'CSS'],
+            skillsWanted: ['Docker', 'TypeScript', 'GraphQL'],
             availability: ['Monday', 'Tuesday', 'Thursday', 'Friday'],
             rating: 4.8,
             reviewCount: 24,
-            profileImage: 'https://randomuser.me/api/portraits/women/44.jpg'
+            profileImage: 'https://randomuser.me/api/portraits/men/44.jpg'
         },
         '2': {
-            name: 'Michael Chen',
-            location: 'San Francisco, USA',
-            skillsOffered: ['Python', 'Machine Learning'],
-            skillsWanted: ['UX Design', 'JavaScript', 'React'],
+            name: 'Ishita Verma',
+            location: 'Bangalore, India',
+            skillsOffered: ['Python', 'Flask', 'SQL', 'Git'],
+            skillsWanted: ['React Native', 'AWS', 'MongoDB'],
             availability: ['Monday', 'Wednesday', 'Friday'],
             rating: 4.2,
             reviewCount: 18,
-            profileImage: 'https://randomuser.me/api/portraits/men/32.jpg'
+            profileImage: 'https://randomuser.me/api/portraits/women/32.jpg'
         },
         '3': {
-            name: 'Emily Rodriguez',
-            location: 'Chicago, USA',
-            skillsOffered: ['Graphic Design', 'Photoshop', 'Illustrator'],
-            skillsWanted: ['Web Development', 'SEO'],
+            name: 'Rohan Desai',
+            location: 'Delhi, India',
+            skillsOffered: ['Java', 'Spring Boot', 'MySQL', 'REST APIs'],
+            skillsWanted: ['Kubernetes', 'JavaScript', 'Tailwind CSS'],
             availability: ['Tuesday', 'Thursday', 'Saturday', 'Sunday'],
             rating: 3.9,
             reviewCount: 12,
-            profileImage: 'https://randomuser.me/api/portraits/women/68.jpg'
+            profileImage: 'https://randomuser.me/api/portraits/men/68.jpg'
+        },
+        '4': {
+            name: 'Meera Nair',
+            location: 'Chennai, India',
+            skillsOffered: ['C++', 'Data Structures', 'Algorithms', 'Competitive Programming'],
+            skillsWanted: ['Web Development', 'Django', 'GitHub Actions'],
+            availability: ['Monday', 'Tuesday', 'Wednesday'],
+            rating: 4.5,
+            reviewCount: 15,
+            profileImage: 'https://randomuser.me/api/portraits/women/45.jpg'
+        },
+        '5': {
+            name: 'Vikram Joshi',
+            location: 'Hyderabad, India',
+            skillsOffered: ['Android', 'Kotlin', 'Firebase', 'Figma'],
+            skillsWanted: ['React', 'Redux', 'Docker'],
+            availability: ['Wednesday', 'Thursday', 'Friday'],
+            rating: 4.7,
+            reviewCount: 22,
+            profileImage: 'https://randomuser.me/api/portraits/men/22.jpg'
+        },
+        '6': {
+            name: 'Nikita Rao',
+            location: 'Pune, India',
+            skillsOffered: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
+            skillsWanted: ['TypeScript', 'Next.js', 'Firebase'],
+            availability: ['Monday', 'Thursday', 'Friday', 'Saturday'],
+            rating: 4.3,
+            reviewCount: 19,
+            profileImage: 'https://randomuser.me/api/portraits/women/76.jpg'
+        },
+        '7': {
+            name: 'Karan Malhotra',
+            location: 'Kolkata, India',
+            skillsOffered: ['DevOps', 'CI/CD', 'AWS', 'Terraform'],
+            skillsWanted: ['Go', 'System Design', 'Java'],
+            availability: ['Tuesday', 'Wednesday', 'Saturday'],
+            rating: 4.9,
+            reviewCount: 27,
+            profileImage: 'https://randomuser.me/api/portraits/men/54.jpg'
+        },
+        '8': {
+            name: 'Priya Kapoor',
+            location: 'Ahmedabad, India',
+            skillsOffered: ['Swift', 'iOS Development', 'UI/UX Design', 'Xcode'],
+            skillsWanted: ['Backend Development', 'Node.js', 'MongoDB'],
+            availability: ['Monday', 'Friday', 'Saturday', 'Sunday'],
+            rating: 4.1,
+            reviewCount: 14,
+            profileImage: 'https://randomuser.me/api/portraits/women/28.jpg'
         }
     };
     
@@ -157,7 +207,12 @@ function initActionButtons() {
     
     if (requestBtn) {
         requestBtn.addEventListener('click', function() {
-            alert('Request sent! The user will be notified of your skill swap request.');
+            // Get the user ID from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const userId = urlParams.get('id');
+            
+            // Navigate to the choose-skill page with the user ID
+            window.location.href = `choose-skill.html?id=${userId}`;
         });
     }
     
