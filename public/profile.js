@@ -98,7 +98,7 @@ function initProfilePicture() {
     
     // Remove profile picture
     removeBtn.addEventListener('click', function() {
-        profileImage.src = 'media/default-profile.svg';
+        profileImage.src = 'media/default-profile.jpg';
         fileInput.value = '';
     });
 }
