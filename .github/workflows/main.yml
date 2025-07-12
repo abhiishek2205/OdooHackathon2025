@@ -1,0 +1,17 @@
+name: CI - Push Workflow
+
+on:
+  push:
+    branches:
+      - main  # or 'master' or any branch you want to monitor
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run a basic script
+        run: echo "🎉 The push was successful!"
