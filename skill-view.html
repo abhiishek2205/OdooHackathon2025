@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Profile - Skill Swap Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="skill-view.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="skill-view-page">
+    <header>
+        <div class="logo">
+            <h1>Skill Swap Platform</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="profile.html" class="nav-link">My Profile</a>
+            <a href="#" class="nav-link">Messages</a>
+            <button class="login-btn">Login</button>
+        </div>
+    </header>
+
+    <main class="skill-view-container">
+        <div class="skill-view-content">
+            <div class="skill-view-left">
+                <h1 id="user-name" class="user-name">Sarah Johnson</h1>
+                <div class="user-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="user-location">New York, USA</span>
+                </div>
+                
+                <div class="skills-section">
+                    <div class="skills-offered">
+                        <h2>Skills Offered</h2>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">UI Design</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-wanted">
+                        <h2>Skills Wanted</h2>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="availability-section">
+                    <h2>Availability</h2>
+                    <div class="availability-days">
+                        <span class="day available">Mon</span>
+                        <span class="day available">Tue</span>
+                        <span class="day">Wed</span>
+                        <span class="day available">Thu</span>
+                        <span class="day available">Fri</span>
+                        <span class="day">Sat</span>
+                        <span class="day">Sun</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-view-right">
+                <div class="profile-image-container">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile Picture" id="profile-image">
+                </div>
+                <div class="action-buttons">
+                    <button class="request-btn primary-btn">Request Skill Swap</button>
+                    <button class="message-btn secondary-btn">Send Message</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="rating-section">
+            <h2>Rating</h2>
+            <div class="rating-display">
+                <div class="rating-score">4.8</div>
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="rating-count">Based on 24 reviews</div>
+            </div>
+            
+            <div class="reviews-preview">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="reviewer-name">John D.</div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        "Sarah was amazing to work with! Her JavaScript skills are top-notch and she was very patient in explaining concepts."
+                    </div>
+                </div>
+                
+                <div class="review">
+                    <div class="review-header">
+                        <div class="reviewer-name">Emily T.</div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        "Great experience working with Sarah on my UI design project. Very professional and delivered quality work."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>Skill Swap Platform</h3>
+                <p>Odoo Hackathon</p>
+            </div>
+            <div class="footer-right">
+                <p>Developed by:</p>
+                <p>Rohit Bhardwaj, Pragya Sahu, Abhishek Upadhyay and Rahul Yadav</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="skill-view.js"></script>
+</body>
+</html> 
