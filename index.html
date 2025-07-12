@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Swap Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Skill Swap Platform</h1>
+        </div>
+        <div class="login">
+            <button class="login-btn">Login</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="search-container">
+            <input type="text" placeholder="Search skills or users..." class="search-input">
+            <div class="filter-dropdown">
+                <button class="filter-btn">Filter <i class="fas fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#">By Skills Offered</a>
+                    <a href="#">By Skills Wanted</a>
+                    <a href="#">By Rating</a>
+                    <a href="#">By Location</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="user-cards">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="profile-pic">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile Picture">
+                </div>
+                <div class="user-info">
+                    <h3>Sarah Johnson</h3>
+                    <div class="skills">
+                        <div class="skills-offered">
+                            <h4>Skills Offered:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">UI Design</span>
+                            </div>
+                        </div>
+                        <div class="skills-wanted">
+                            <h4>Skills Wanted:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-right">
+                <button class="request-btn">Request</button>
+                <div class="rating">
+                    <span class="rating-score">4.8</span>/5
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="profile-pic">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Picture">
+                </div>
+                <div class="user-info">
+                    <h3>Michael Chen</h3>
+                    <div class="skills">
+                        <div class="skills-offered">
+                            <h4>Skills Offered:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Machine Learning</span>
+                            </div>
+                        </div>
+                        <div class="skills-wanted">
+                            <h4>Skills Wanted:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">UX Design</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-right">
+                <button class="request-btn">Request</button>
+                <div class="rating">
+                    <span class="rating-score">4.2</span>/5
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="profile-pic">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Profile Picture">
+                </div>
+                <div class="user-info">
+                    <h3>Emily Rodriguez</h3>
+                    <div class="skills">
+                        <div class="skills-offered">
+                            <h4>Skills Offered:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Graphic Design</span>
+                                <span class="skill-tag">Photoshop</span>
+                                <span class="skill-tag">Illustrator</span>
+                            </div>
+                        </div>
+                        <div class="skills-wanted">
+                            <h4>Skills Wanted:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Web Development</span>
+                                <span class="skill-tag">SEO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-right">
+                <button class="request-btn">Request</button>
+                <div class="rating">
+                    <span class="rating-score">3.9</span>/5
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 
